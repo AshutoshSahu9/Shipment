@@ -1,0 +1,57 @@
+<%= form_with(model: shipment, local: true) do |form| %>
+  <% if shipment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shipment.errors.count, "error") %> prohibited this shipment from being saved:</h2>
+
+      <ul>
+      <% shipment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :AwbNo %>
+    <%= form.text_field :AwbNo, id: :shipment_AwbNo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Booking_Date %>
+    <%= form.text_field :Booking_Date, id: :shipment_Booking_Date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Origin %>
+    <%= form.text_area :Origin, id: :shipment_Origin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Destination %>
+    <%= form.text_area :Destination, id: :shipment_Destination %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Consignee %>
+    <%= form.text_area :Consignee, id: :shipment_Consignee %>
+  </div>
+
+  <div class="field">
+    <%= form.label :RefNo %>
+    <%= form.text_field :RefNo, id: :shipment_RefNo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Status %>
+    <%= form.text_area :Status, id: :shipment_Status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :LastUpdate %>
+    <%= form.text_field :LastUpdate, id: :shipment_LastUpdate %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

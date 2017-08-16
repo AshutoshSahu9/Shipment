@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Awbno:</strong>
+  <%= @shipment.AwbNo %>
+</p>
+
+<p>
+  <strong>Booking date:</strong>
+  <%= @shipment.Booking_Date %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @shipment.Origin %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @shipment.Destination %>
+</p>
+
+<p>
+  <strong>Consignee:</strong>
+  <%= @shipment.Consignee %>
+</p>
+
+<p>
+  <strong>Refno:</strong>
+  <%= @shipment.RefNo %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @shipment.Status %>
+</p>
+
+<p>
+  <strong>Lastupdate:</strong>
+  <%= @shipment.LastUpdate %>
+</p>
+
+<%= link_to 'Edit', edit_shipment_path(@shipment) %> |
+<%= link_to 'Back', shipments_path %>
