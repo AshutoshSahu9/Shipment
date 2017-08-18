@@ -1,8 +1,6 @@
 class ShipmentsController < ApplicationController
   before_action :set_shipment, only: [:show, :edit, :update, :destroy]
 
-	  class ApplicationController < ActionController::Base
-	   protect_from_forgery with: :exception
 	   def scrape_delnetconnect
 		  require 'rubygems'
 		  require 'nokogiri'
