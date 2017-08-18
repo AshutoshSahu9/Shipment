@@ -1,6 +1,21 @@
 class ShipmentsController < ApplicationController
   before_action :set_shipment, only: [:show, :edit, :update, :destroy]
 
+	  class ApplicationController < ActionController::Base
+	   protect_from_forgery with: :exception
+	   def scrape_delnetconnect
+		  require 'rubygems'
+		  require 'nokogiri'
+		  require 'open-uri'
+
+		  page = Nokogiri::HTML(open('http://delnetconnect.com/Track.aspx?txtvalue=Track_byAwb&Query=%27mgwd6001025%27'))
+		   page.css('#gridvwBind tbody').each do |el|
+			puts el.text
+		   end
+	   end
+	 end
+ 
+  
   # GET /shipments
   # GET /shipments.json
   def index
