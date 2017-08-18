@@ -7,11 +7,12 @@ class ShipmentsController < ApplicationController
 		  require 'open-uri'
 
 		  page = Nokogiri::HTML(open('http://delnetconnect.com/Track.aspx?txtvalue=Track_byAwb&Query=%27mgwd6001025%27'))
-		   page.css('#gridvwBind tbody').each do |el|
-			puts el.text
+		   entries=page.css('#gridvwBind')
+           @entriesArray = []
+           entries.each do|el|
+             @entriesArray <<el.text 
 		   end
 	   end
-	 end
  
   
   # GET /shipments
@@ -31,7 +32,8 @@ class ShipmentsController < ApplicationController
   end
 
   # GET /shipments/1/edit
-  def edit
+ 
+ def edit
   end
 
   # POST /shipments
